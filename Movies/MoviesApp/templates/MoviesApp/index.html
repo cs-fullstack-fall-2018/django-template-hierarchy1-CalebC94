@@ -1,0 +1,18 @@
+{% extends "MoviesApp/base.html" %}
+
+{% block body %}
+
+{% if Movieslist %}
+<h1>Movie List</h1>
+<ul>
+    {% for movieListings in Movieslist %}
+    <li>{{ movieListings.name }}</li>
+    <li>{{ movieListings.yearReleased }}</li>
+    <li>{{ movieListings.ageAllowed }}</li>
+    <li>{{ movieListings.genres }}</li><hr>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+{% endblock %}
